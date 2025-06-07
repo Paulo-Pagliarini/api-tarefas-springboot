@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
-
+// colocar os @ request e controler
 @RestController
 @RequestMapping("/api/tarefas")
 public class TarefaController {
@@ -17,25 +17,25 @@ public class TarefaController {
     @Autowired
     private TarefaRepository repository;
 
-    // Criar tarefa
+    // criar tarefa
     @PostMapping
     public Tarefa criarTarefa(@RequestBody Tarefa tarefa) {
         return repository.save(tarefa);
     }
 
-    // Listar todas as tarefas
+    // listar todas a tarefas
     @GetMapping
     public List<Tarefa> listarTarefas() {
         return repository.findAll();
     }
 
-    // Buscar por ID
+    // Buscar por id
     @GetMapping("/{id}")
     public Optional<Tarefa> buscarPorId(@PathVariable Long id) {
         return repository.findById(id);
     }
 
-    // Atualizar tarefa
+    // Atualizar a tarefa
     @PutMapping("/{id}")
     public Tarefa atualizarTarefa(@PathVariable Long id, @RequestBody Tarefa tarefaAtualizada) {
         return repository.findById(id).map(tarefa -> {
