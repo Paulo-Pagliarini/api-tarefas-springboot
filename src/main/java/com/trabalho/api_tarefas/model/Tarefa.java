@@ -15,7 +15,7 @@ public class Tarefa {
     private LocalDate dataEntrega;
     private String responsavel;
 
-    // Getters e Setters
+    // colocar os Getters e Setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
